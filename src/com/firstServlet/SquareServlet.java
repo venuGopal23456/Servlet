@@ -3,6 +3,7 @@ package com.firstServlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
 
 @SuppressWarnings("serial")
+@WebServlet("/sq")
 public class SquareServlet extends HttpServlet   {
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException
@@ -46,7 +48,9 @@ public class SquareServlet extends HttpServlet   {
 		}
 		k = k * k;
 		PrintWriter outPrintWriter = res.getWriter();
+		outPrintWriter.println("<html><body bgcolor = 'Blue'>");
 		outPrintWriter.println("The is My page " + k);
+		outPrintWriter.println("</body></html>");
 		
 	}
 
